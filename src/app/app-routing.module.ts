@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     path: '', 
     component: HomeComponent
   },{ 
-    path: 'search/:searchstring', 
+    path: 'search', 
     component: SearchResultComponent
   } 
   //   path: 'search/:searchstring', 

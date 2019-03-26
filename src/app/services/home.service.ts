@@ -7,10 +7,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HomeService {
-  url="http://localhost:5000/search/"
+  url="https://recommender-system-233819.appspot.com"
+  search = "/search/"
   constructor(private http:HttpClient) { }
 
+  getItems(){
+    return this.http.get(this.url,{responseType: 'text'});
+  }
+
   getSearchItems(query){
-    return this.http.get(this.url+query);
+    return this.http.get(this.url+this.search+query,{responseType:'text'});
   }
 }
