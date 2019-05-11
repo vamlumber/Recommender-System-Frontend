@@ -1,0 +1,18 @@
+.headerss{
+    width: 100%;
+    text-align: center;
+}
+.card-header{
+    text-align: center;
+}
+.card-cl{
+    margin-top: 1%;
+    padding-top: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+
+}
+.example-card {
+    max-width: 270px;
+}

@@ -12,9 +12,9 @@
       </mat-form-field>
       <button mat-flat-button color="accent"><mat-icon>search</mat-icon></button> -->
       <mat-form-field appearance="outline">
-        <mat-label>Search any place</mat-label>
-        <input matInput placeholder="Search any place" [(ngModel)]="search">
-        <mat-icon matSuffix (click)="searchIt()">search</mat-icon>
+        <mat-label>Search any book(Tf-Idf)</mat-label>
+        <input matInput placeholder="Search any book(Tf-Idf)" [(ngModel)]="search">
+        <mat-icon matSuffix (click)="searchIt()" class="ioncon">search</mat-icon>
         <!-- <mat-hint>Hint</mat-hint> -->
       </mat-form-field>
     </div>
@@ -23,7 +23,7 @@
   <br>
 
       <!-- *ngIf="(i+1)%3 == 0 || i == 0 ;else elseBlock" -->
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+  <!-- <div fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
       <div *ngFor="let book of items1;index as i">
           <mat-card class="example-card">
               <mat-card-header>
@@ -39,8 +39,8 @@
               </mat-card-content>
           </mat-card>
     </div>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+  </div> -->
+  <!-- <div fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
       <div *ngFor="let book of items2;index as i">
           <mat-card class="example-card">
               <mat-card-header>
@@ -54,13 +54,9 @@
                     {{book.description}}
                 </p>
               </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
-              </mat-card-actions>
           </mat-card>
     </div>
-</div>
+</div> -->
   <!-- <ng-template #elseBlock>
       <div>
           <mat-card class="example-card">
@@ -82,4 +78,87 @@
             </mat-card>
       </div>
   </ng-template> -->
+  <br>
+  <div fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
+    <mat-card class="example1-card">
+      <mat-card-header class="classifier-header">
+        <mat-card-title>Classifier</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <textarea matInput placeholder="Write Text" [(ngModel)]="classiferText"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="classifyText()" >Classify</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <br>
+  <br>
+  <div *ngIf="classificationApplied" fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
+    <mat-card class="example1-card">
+      <mat-card-header class="classifier-header">
+        <mat-card-title>The text belongs to following genre: <span style="background-color: coral;">{{classifer_result}}</span> </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <!-- <mat-icon mat-list-icon>folder</mat-icon> -->
+            <h4 mat-line> Adult : {{genre_score.adult}}</h4>
+            <!-- <p mat-line> B </p> -->
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Biography :{{genre_score.biography}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Children :{{genre_score.children}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Comics :{{genre_score.comics}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Crime :{{genre_score.crime}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Fantasy :{{genre_score.fantasy}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Graphics :{{genre_score.graphics}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>History :{{genre_score.history}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Mystery :{{genre_score.mystery}}</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>paranormal :{{genre_score.paranormal}}</h4>
+          </mat-list-item>    
+          <mat-list-item>
+            <h4 mat-line>Poetry :{{genre_score.poetry}}</h4>
+          </mat-list-item>    
+          <mat-list-item>
+            <h4 mat-line>Romance :{{genre_score.romance}}</h4>
+          </mat-list-item>    
+          <mat-list-item>
+            <h4 mat-line>Thriller :{{genre_score.thriller}}</h4>
+          </mat-list-item>    
+          <mat-list-item>
+            <h4 mat-line>Young :{{genre_score.young}}</h4>
+          </mat-list-item>        
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <br>
+
+  <!-- <div *ngIf="classificationApplied" fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
+    <mat-list style="max-width:100%;">
+      <h3 mat-subheader>The text belongs to following genre: <b>{{classifer_result}}</b></h3>
+      <mat-list-item *ngFor="let folder of folders">
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <h4 mat-line>A</h4>
+        <p mat-line> B </p>
+      </mat-list-item>
+      </mat-list>
+  </div> -->
 </div>

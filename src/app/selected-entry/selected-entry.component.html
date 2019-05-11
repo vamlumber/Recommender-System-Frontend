@@ -1,3 +1,58 @@
-<p>
-  selected-entry works!
-</p>
+<div fxLayout="column" class="report">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <b><u><h2>REPORT</h2></u></b>
+      <br>
+      <br>
+      <br>
+
+    </div>
+    <br>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%" >
+        <p style="padding-left:40px;"><b><u>OBJECTIVE</u></b></p>
+        <!-- To build a recommender system for books using user reviews,rating and interaction. The dataset used for the project is scraped from goodreads website by UCSD Prof. Julian Mcauley.
+        Recommender systems over the web are very prominent these days as the ablitiy of the user to browse the whole catalog of items is not possible . These systems provide more accessiablity to the user and also help in business revenue to any organisation.
+        <br> -->
+    </div>
+    <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <!-- <b><u>Objective:</u></b> -->
+        <p style="padding-left:80px;padding-right:80px">To build a recommender system for books using user reviews,rating and interaction. The dataset used for the project is scraped from goodreads website by UCSD Prof. Julian Mcauley.
+        Recommender systems over the web are very prominent these days as the ablitiy of the user to browse the whole catalog of items is not possible . These systems provide more accessiablity to the user and also help in business revenue to any organisation.
+        </p>
+        <br>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:40px;"><b><u>OVERVIEW</u></b></p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+
+        <p style="padding-left:80px;padding-right:80px">
+          The first phase of the project is to develop the search functionality using the <b>TFIDF</b> model. The dataset has the following schema:
+        </p>
+        <ul style="background-color:#f2f2f2;padding: 20px;">
+             
+            <li>"title", "description", "#reivews", "#ratings", "average_rating"</li>
+            <li>"isbn", "country_code", "language_code", "num_pages", "publication_day", "publication_month", "publication_year", "url"</li>
+            <li>"series", "authors", "publisher", "work_id"</li>
+            <li>"popular_shelves": top user-generated shelves for a book, used to define genres by goodreads</li>   
+        </ul>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px">
+        This dataset was collected in late 2017 on goodreads.com, where we only scraped users' public shelves, i.e. everyone can see it on web without login. User IDs and review IDs are anonymized. For each book in each user's shelves, we extracted if the book had been read and if it had been rated (and the associated rating score). Thus for each user-book pair, we obtained the following interaction chain: shelved -- read -- rated (and rating score).
+
+        </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px">In the first phase , we create a document term matrix after lemmentization and stemming . Then we calculate the Term Frequency and Inverse Document Frequency for each of the terms.
+            When the system is hit with a search query , we sanitize (lementization and stopwords) the query ,the for each term, get the tfidf of each term and find the cosine similarity of the query with our model. 
+            Thus , we get the ranking of the document for the query . </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:40px;"><b><u>ENVIRONMENT</u></b></p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px">The environment used to develop the applicaton. I have used angular to develop the frontend framework to develop the frontend and used flask at backend to provide the 
+        the REST API . I have hosted my service on Google Cloud App engine . I have used google storage to save my model dumps with the help of Joblib library.
+        </p>
+    </div>
+</div>

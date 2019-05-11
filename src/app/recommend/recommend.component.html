@@ -1,0 +1,76 @@
+<mat-card class="card-cl" *ngIf="gotBook">
+  <mat-card-header class="card-header">
+    <mat-card-title>{{book.original_title}}</mat-card-title>
+    <mat-card-subtitle>{{book.authors}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><b>Description:</b>{{book.description}}</p>
+    <p><b>Genre:</b>{{book.genre}}</p>
+    <p><b>ISBN:</b>{{book.isbn}}</p>
+    <p><b>Num-pages:</b>{{num_pages}}</p>
+    <p><b>Publisher:</b>{{book.publisher}}</p>
+  </mat-card-content>
+</mat-card>
+<br>
+<br>
+<div class="headerss">
+<h3><u>Recommended Items</u></h3>
+</div>
+<br>
+<br>
+<div fxLayout="column" class="homme" *ngIf="foundBooks">
+        <!-- *ngIf="(i+1)%3 == 0 || i == 0 ;else elseBlock" -->
+    <div fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
+        <div *ngFor="let booki of books1;index as i">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title class="habibi">{{booki.original_title}}</mat-card-title>
+                  <mat-card-subtitle>{{booki.authors}} <b>Score:{{booki.cosine}}</b></mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="booki.image_url" [alt]="booki.original_title">
+                <!-- <mat-card-content>
+                  <p>
+                      {{book.description}}
+                  </p>
+                </mat-card-content> -->
+            </mat-card>
+      </div>
+    </div>
+    <br>
+    <div fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
+        <div *ngFor="let booki of books2;index as i">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title class="habibi">{{booki.original_title}}</mat-card-title>
+                  <mat-card-subtitle>{{booki.authors}} <b>Score:{{booki.cosine}}</b></mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="booki.image_url" [alt]="booki.original_title">
+                <!-- <mat-card-content>
+                  <p>
+                      {{book.description}}
+                  </p>
+                </mat-card-content> -->
+            </mat-card>
+      </div>
+  </div>
+  <br>
+    <div fxLayout="row" fxLayoutAlign="center top" fxLayoutGap="3.33%">
+        <div *ngFor="let booki of books3;index as i">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title class="habibi" >{{booki.original_title}}</mat-card-title>
+                  <mat-card-subtitle>{{booki.authors}} <b>Score:{{booki.cosine}}</b></mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="booki.image_url" [alt]="booki.original_title">
+                <!-- <mat-card-content>
+                  <p>
+                      {{book.description}}
+                  </p>
+                </mat-card-content> -->
+            </mat-card>
+      </div>
+    </div>
+  </div>

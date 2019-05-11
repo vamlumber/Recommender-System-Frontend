@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component'
 import {SearchResultComponent} from './search-result/search-result.component'
-
+import{SelectedEntryComponent} from './selected-entry/selected-entry.component'
+import{RecommendComponent} from './recommend/recommend.component'
+import {ProjectSketchComponent} from './project-sketch/project-sketch.component'
 
 const appRoutes: Routes = [
   { 
@@ -11,6 +13,17 @@ const appRoutes: Routes = [
   },{ 
     path: 'search', 
     component: SearchResultComponent
+  },{ 
+    path: 'report', 
+  component: SelectedEntryComponent
+  },{
+    path:'recommend',
+    component:RecommendComponent,
+    data:{}
+  },
+  {
+    path:'project-sketch',
+    component:ProjectSketchComponent
   } 
   //   path: 'search/:searchstring', 
   //   component: SearchResultComponent

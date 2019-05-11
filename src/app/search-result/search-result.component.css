@@ -1,0 +1,16 @@
+.example-card {
+    max-width: 270px;
+}
+  
+.example-header-image {
+    background-image: url('../../assets/book-checked.png');
+    background-size: cover;
+}
+.habibi:hover{
+    cursor: context-menu;
+    text-decoration: underline;
+}
+.headerss{
+    width: 100%;
+    text-align: center;
+}

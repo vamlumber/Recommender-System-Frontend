@@ -4,7 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
+import {ProjectSketchComponent} from './project-sketch/project-sketch.component'
 import { SearchResultComponent } from './search-result/search-result.component';
+import { RecommendComponent} from './recommend/recommend.component';
 import { SelectedEntryComponent } from './selected-entry/selected-entry.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {MatToolbarModule} from '@angular/material/toolbar';
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     AppHeaderComponent,
     SearchResultComponent,
-    SelectedEntryComponent
+    SelectedEntryComponent,
+    RecommendComponent,
+    ProjectSketchComponent
   ],
   imports: [
     BrowserModule,

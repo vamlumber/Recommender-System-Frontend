@@ -14,7 +14,7 @@ mat-form-field.mat-form-field{
 }
   
 .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-image: url('../../assets/book-checked.png');
     background-size: cover;
 }
 /* .homme{
@@ -24,4 +24,15 @@ mat-form-field.mat-form-field{
 :host ::ng-deep .mat-form-field-wrapper{
     padding-bottom: 0;
     margin: 0px;
+}
+.ioncon:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+.example1-card{
+    width: 60%;
+}
+.classifier-header{
+    text-align: center;
+    /* background-color: purple; */
 }
