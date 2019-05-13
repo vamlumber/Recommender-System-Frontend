@@ -14,6 +14,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from './app.material.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     AppMaterialModule,
     FlexLayoutModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

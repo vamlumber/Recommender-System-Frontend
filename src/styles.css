@@ -4,8 +4,14 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
-
+@font-face{
+    font-family: 'lato';
+    src: url("./assets/Lato-Regular.ttf")format("truetype")
+}
+@font-face{
+    font-family: 'raleway';
+    src: url("./assets/Raleway-Medium.ttf")format("truetype")
+}
 /* .mat-badge-content{
     font-weight:600;
     font-size:12px;

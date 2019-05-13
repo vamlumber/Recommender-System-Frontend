@@ -3,3 +3,6 @@
     color:#0f0f0f;
     font-family: 'Times New Roman', Times, serif;
 }
+.example-card{
+    max-width: 500px;
+}

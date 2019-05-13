@@ -1,34 +1,32 @@
 <div fxLayout="column" class="report">
     <div fxLayout="row" fxLayoutAlign="center center">
-      <b><u><h2>REPORT</h2></u></b>
-      <br>
-      <br>
-      <br>
-
+      <b><u><h1 style="font-family:'raleway'">PROJECT REPORT</h1></u></b>
+      <br>  
     </div>
     <br>
-    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%" >
-        <p style="padding-left:40px;"><b><u>OBJECTIVE</u></b></p>
+    <br>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%" >
+        <p style="font-family:'raleway'"><b><u>OBJECTIVE</u></b></p>
         <!-- To build a recommender system for books using user reviews,rating and interaction. The dataset used for the project is scraped from goodreads website by UCSD Prof. Julian Mcauley.
         Recommender systems over the web are very prominent these days as the ablitiy of the user to browse the whole catalog of items is not possible . These systems provide more accessiablity to the user and also help in business revenue to any organisation.
         <br> -->
     </div>
     <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="left center" fxLayoutGap="3.33%">
         <!-- <b><u>Objective:</u></b> -->
-        <p style="padding-left:80px;padding-right:80px">To build a recommender system for books using user reviews,rating and interaction. The dataset used for the project is scraped from goodreads website by UCSD Prof. Julian Mcauley.
-        Recommender systems over the web are very prominent these days as the ablitiy of the user to browse the whole catalog of items is not possible . These systems provide more accessiablity to the user and also help in business revenue to any organisation.
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">To build a recommender system for books using user reviews,rating and interaction. The dataset used for the project is scraped from goodreads website by UCSD Prof. Julian Mcauley.
+        Recommender systems on the web are very prominent these days as the ablitiy of the user to browse the whole catalog of items is not possible . These systems provide more accessiablity to the user and also help in business revenue to any organisation.
         </p>
         <br>
     </div>
-    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
-        <p style="padding-left:40px;"><b><u>OVERVIEW</u></b></p>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="padding-left:40px;font-family:'raleway'"><b><u>OVERVIEW</u></b></p>
     </div>
     <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
 
-        <p style="padding-left:80px;padding-right:80px">
+        <p style="padding-left:80px;padding-right:60px;font-family:'lato'">
           The first phase of the project is to develop the search functionality using the <b>TFIDF</b> model. The dataset has the following schema:
         </p>
-        <ul style="background-color:#f2f2f2;padding: 20px;">
+        <ul style="background-color:#f3f3f3;margin-right:16px !important;font-family:'lato';padding-top:10px;padding-bottom:10px;">
              
             <li>"title", "description", "#reivews", "#ratings", "average_rating"</li>
             <li>"isbn", "country_code", "language_code", "num_pages", "publication_day", "publication_month", "publication_year", "url"</li>
@@ -37,22 +35,176 @@
         </ul>
     </div>
     <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
-        <p style="padding-left:80px;padding-right:80px">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">
         This dataset was collected in late 2017 on goodreads.com, where we only scraped users' public shelves, i.e. everyone can see it on web without login. User IDs and review IDs are anonymized. For each book in each user's shelves, we extracted if the book had been read and if it had been rated (and the associated rating score). Thus for each user-book pair, we obtained the following interaction chain: shelved -- read -- rated (and rating score).
 
         </p>
     </div>
-    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
-        <p style="padding-left:80px;padding-right:80px">In the first phase , we create a document term matrix after lemmentization and stemming . Then we calculate the Term Frequency and Inverse Document Frequency for each of the terms.
-            When the system is hit with a search query , we sanitize (lementization and stopwords) the query ,the for each term, get the tfidf of each term and find the cosine similarity of the query with our model. 
-            Thus , we get the ranking of the document for the query . </p>
+    
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="font-family:'raleway'"><b><u>DATA CLEANING</u></b></p>
     </div>
     <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
-        <p style="padding-left:40px;"><b><u>ENVIRONMENT</u></b></p>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
-        <p style="padding-left:80px;padding-right:80px">The environment used to develop the applicaton. I have used angular to develop the frontend framework to develop the frontend and used flask at backend to provide the 
-        the REST API . I have hosted my service on Google Cloud App engine . I have used google storage to save my model dumps with the help of Joblib library.
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">The dataset picked for the project is available at <a href="https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home">link</a> . Dataset has been scrapped from the goodreads website therefore it need to be cleaned. As the dataset is large , I have first cleaned the data in mongoDB. The dataset has books from diverse places and of different languages like arabic,swedish,german etc .The cleaning process included the removal of records which are not labeled with title, genre or description. The data is also distributed among various tables, so important attributes from each table are aggregated together to form on table.The genre for this dataset are not explicitly given but the attribute of popular shelves gives quiet accurate genre for every book.I have also created a notebook for doing the necessary simulations,testing and validation.
+            Dataset has been scrapped from the goodreads website therefore it need to be cleaned. As the dataset is large , I have first cleaned the data in mongoDB. The dataset has books from diverse places and of different languages like arabic,swedish,german etc .The cleaning process included the removal of records which are not labeled with title, genre or description. The data is also distributed among various tables, so important attributes from each table are aggregated together to form on table.The genre for this dataset are not explicitly given but the attribute of popular shelves gives quiet accurate genre for every book.I have also created a notebook for doing the necessary simulations,testing and validation.
         </p>
     </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="font-family:'raleway'"><b><u>SEARCH (TFIDF)</u></b></p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">In the first phase , we create a document term matrix after lemmentization( Use nltk library lementizer) . Then we calculate the Term Frequency of every term in document and Inverse Document Frequency for each of the terms.
+            When the system is hit with a search query , we sanitize (lementization and stopwords) the query ,the for each term, get the tfidf of each term in the query and find the cosine similarity of the query with our model. 
+            Thus , we get the ranking of the document for the query . </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%"> 
+        <pre style="background-color:#f3f3f3;margin: 10px;">
+            <code [innerHTML]="myCode">
+
+            </code>
+        </pre>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">The above code create scipy csr matrix(compressed row matrix). I used csr matrix as we have large dimension matrix which contains many zero and few frequency numbers .The rows represent each book and columns have all the terms.My dataset has more than 270k books and more than 500k unique words or terms. Some reference for the code was taken from the csr documentation(<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix">link</a>) 
+        </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%"> 
+        <pre style="background-color:#f3f3f3;margin: 10px;">
+            <code [innerHTML]="tfidf">
+            </code>
+        </pre>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">
+            The above code explains my tfidf functionality.<br>
+        </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="font-family:'raleway'"><b><u>CLASSIFIER</u></b></p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">The classifer implemented is Naive Bayes(Multinomial) Classifier.Navie Bayes is a simple probablistic algorithm which uses conditional probability of each term related to the class. As the genre attributes used for classification are not multi-class but multi-label . A book may belong to number of genre at the same time therefore, the approach I have taken is to classify each label ,wheather the given input belongs to a genre or not. Subsequently we classify every genre.To test the accuracy of the classifier ,I have used the hamming loss (hamming score) metric , which is genrally used for multi-label problems. As for altering the hyperparameters ,
+            I have changes tried various values of smoothing ranging from 0.01 to 1. But for 0.1 ,I get the best metric score.<br><b><u>Note :</u></b>The probablity values for each genre shown in classifier output,is independent of each other. The values shown are higher probablity of wheather the given input belongs to the genre or not.    
+        </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title class="habibi">Naive Bayes</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/Naive_bayes.png" alt="Search">
+        </mat-card>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%"> 
+        <pre style="background-color:#f3f3f3;margin: 10px;">
+            <code [innerHTML]="multiNB">
+            </code>
+        </pre>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">The above graph shows the change in hamming score over the changes in the smothing values.<br><br>
+            <b>Hamming Loss (HL) </b>: Hamming Loss reports how many times on average, the relevance of an
+example to a class label is incorrectly predicted . Therefore, hamming loss takes into account the
+prediction error (an incorrect label is predicted) and the missing error (a relevant label not predicted),
+normalized over total number of classes and total number of examples.
+        </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title class="habibi">Hamming Score</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/HL.png" alt="Search">
+        </mat-card>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%"> 
+        <pre style="background-color:#f3f3f3;margin: 10px;">
+            <code [innerHTML]="hamming">
+            </code>
+        </pre>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="habibi">Hyperparameter</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="../../assets/alpha.png" alt="Search">
+      </mat-card>
+    </div>
+
+    
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">
+          The above graph explains the changes in the hamming score metric with respect to changes in alpha.<br>
+          
+        </p>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="font-family:'raleway'"><b><u>RECOMMENDER SYSTEM</u></b></p>
+    </div>
+    
+
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">Recommender System are quite often spotted and used in our daily surfing . We come across many instances where recommendation has helped us to find the necessay entity. These systems are also helpful in revenue generation for an organisation.E-commerce has taken the maximum advantage of this concept.
+            There are usually two type of recommender system content based and collaberative filtering. Collaberative filtering deals with user interaction with the data whereas content based relies on the data it has of the dataset .I have build a content based recommended system. When a book a selected the book ,the books meta data is to form a row vector or matrix ,which then computes the cosine similarity between the selected book and all the book present in the dataset 
+        </p>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title class="habibi">Cosine Similarity</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/cosine_simi.png" alt="Search">
+        </mat-card>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%"> 
+        <pre style="background-color:#f3f3f3;margin: 10px;">
+            <code [innerHTML]="cosi">
+            </code>
+        </pre>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">
+            The above provides the dot product between two matrices , one is term-document matrix and the other is input search query or selected book. The calculation for the denominator of cosine is shown below
+        </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%"> 
+        <pre style="background-color:#f3f3f3;margin: 10px;">
+            <code [innerHTML]="normalize">
+            </code>
+        </pre>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="font-family:'raleway'"><b><u>ENVIRONMENT</u></b></p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <p style="padding-left:80px;padding-right:80px;font-family:'lato'">The environment used to develop the applicaton. I have used Angular to develop the frontend application and used flask backend to provide the 
+        the REST API . I have hosted my backend service on Google Cloud App engine and stored the dataset in google cloud storage.
+        </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3.33%">
+        <p style="font-family:'raleway'"><b><u>REFERENCES</u></b></p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="3.33%">
+        <mat-list role="list" style="padding-left:80px;padding-right:80px;font-family:'lato'">
+            <mat-list-item role="listitem">1. <a href="https://towardsdatascience.com/multinomial-naive-bayes-classifier-for-text-analysis-python-8dd6825ece67">Multinomial Naive Bayes Classifier for Text Analysis</a>  </mat-list-item>
+            <!-- <mat-divider></mat-divider> -->
+            <mat-list-item role="listitem">2. <a href="https://medium.freecodecamp.org/how-to-process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3">How to process textual data using TF-IDF in Python</a> </mat-list-item>
+            <!-- <mat-divider></mat-divider> -->
+            <mat-list-item role="listitem">3. <a href="https://medium.com/coinmonks/multi-label-classification-blog-tags-prediction-using-nlp-b0b5ee6686fc">Multi-Label Classification(Blog Tags Prediction)using NLP</a> </mat-list-item>
+            <mat-list-item role="listitem">4. <a href="https://medium.com/@adriensieg/text-similarities-da019229c894">Text Similarities : Estimate the degree of similarity between two texts</a> </mat-list-item>
+            <mat-list-item role="listitem">5. <a href="https://towardsdatascience.com/building-a-content-based-recommender-system-for-hotels-in-seattle-d724f0a32070">Building a Content Based Recommender System for Hotels in Seattle</a> </mat-list-item>
+            <mat-list-item role="listitem">6. <a href="https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/ch04.html">The Effects of Feature Scaling: From Bag-of-Words to Tf-Idf</a> </mat-list-item>
+            <mat-list-item role="listitem">7. <a href="https://cseweb.ucsd.edu/~m5wan/paper/recsys18_mwan.pdf">Mengting Wan, Julian McAuley, "Item Recommendation on Monotonic Behavior Chains", in Proc. of 2018 ACM Conference on Recommender Systems (RecSys'18), Vancouver, Canada, Oct. 2018.</a> </mat-list-item>
+            
+        </mat-list>
+    </div>
 </div>
+
+
+
